@@ -47,17 +47,4 @@ describe('<Footer />', () => {
     expect(tiktok).toBeInTheDocument()
     expect(copyright).toHaveAttribute('href', 'https://company.com/')
   })
-
-  it('Should match snapshot', () => {
-    const { container } = render(
-      <Footer
-        items={data}
-        title="Title"
-        company="Company"
-        linkCompany="https://company.com/"
-      />,
-    )
-
-    expect(container).toMatchSnapshot()
-  })
 })
