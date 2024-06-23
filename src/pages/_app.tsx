@@ -3,7 +3,6 @@ import 'styles/globals.css'
 import Head from 'next/head'
 
 import type { AppProps } from 'next/app'
-import { ApolloProvider } from '@apollo/client'
 
 import { DefaultSeo, NextSeo } from 'next-seo'
 
@@ -11,7 +10,6 @@ import { motion } from 'framer-motion'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 
-import { client } from 'services/client'
 import { pageview } from 'services/googleAnalytics'
 
 import { Analytics } from 'components/Analytics'
@@ -32,7 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [url])
 
   return (
-    <ApolloProvider client={client}>
+    <>
       <Head>
         <NextSeo {...SEO} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -70,7 +68,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
         <Analytics />
       </motion.div>
-    </ApolloProvider>
+    </>
   )
 }
 
