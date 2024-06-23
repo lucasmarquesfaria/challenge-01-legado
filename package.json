@@ -2,6 +2,10 @@
     "name": "fadeapp",
     "version": "1.0.0",
     "private": true,
+    "engines": {
+      "npm": "Utilize o yarn",
+      "yarn": ">=1.22"
+    },
     "scripts": {
         "dev": "next dev",
         "build": "next build",
